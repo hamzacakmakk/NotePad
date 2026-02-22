@@ -61,3 +61,24 @@ class NotePad:
             "last_5": notes[:5],
             "categories": self.categories
         }
+
+
+
+if __name__ == "__main__":
+            app = NotePad()
+
+            print("1 - New Note")
+            print("2 - List Notes")
+
+            secim = input("Select: ")
+
+            if secim == "1":
+                title = input("Title: ")
+                content = input("Content: ")
+                category = input("Category (work/personal/study/other): ")
+                app.create_note(title, content, category)
+                print("Note saved.")
+
+            elif secim == "2":
+                notes = app.get_notes()
+                print(notes)
